@@ -6,22 +6,18 @@ version: '8.x-1.0'
 distribution:
   name: Kickstart Base
 dependencies:
-  - admin_toolbar
-  - admin_toolbar_tools
   - automated_cron
   - block
   - block_content
   - breakpoint
   - ckeditor
   - config
-  - config_devel
-  - config_update
   - contextual
-  - ctools
   - datetime
   - dblog
   - editor
   - field
+  - field_ui
   - file
   - filter
   - help
@@ -35,7 +31,6 @@ dependencies:
   - system
   - taxonomy
   - text
-  - token
   - toolbar
   - update
   - user
