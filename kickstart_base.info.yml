@@ -1,0 +1,45 @@
+name: Kickstart Base
+type: profile
+description: Installs Drupal core with bare minimal settings and then enables the basic modules for your project.
+core: 8.x
+version: '8.x-1.0'
+distribution:
+  name: Kickstart Base
+dependencies:
+  - admin_toolbar
+  - admin_toolbar_tools
+  - automated_cron
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - config
+  - config_devel
+  - config_update
+  - contextual
+  - ctools
+  - datetime
+  - dblog
+  - editor
+  - field
+  - file
+  - filter
+  - help
+  - image
+  - link
+  - node
+  - options
+  - path
+  - serialization
+  - shortcut
+  - system
+  - taxonomy
+  - text
+  - token
+  - toolbar
+  - update
+  - user
+  - menu_link_content
+  - views
+themes:
+  - seven

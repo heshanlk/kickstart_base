@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the base installation profile.
+ */
+
+use Drupal\user\Entity\User;
+
+/**
+ * Implement hook_install().
+ */
+function kickstart_base_install() {
+
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
+
+  // Find all [some name]_base modules inside the modules/custom folder then enable them.
+  $custom_modules_path = 'modules/custom/*';
+  $custom_module_list = array();
+  foreach (glob('./modules/custom/*', GLOB_ONLYDIR) as $folder) {
+    $custom_module_list[] = basename($folder);
+  }
+  $base_module_list = preg_grep('/.*_base$/', $custom_module_list);
+
+  \Drupal::service('module_installer')->install($base_module_list);
+  // Enable the admin theme.
+  \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
+  
+  // Assign user 1 the "administrator" role.
+  $user = User::load(1);
+  $user->roles[] = 'administrator';
+  $user->save();
+}
