@@ -6,6 +6,10 @@ Kickstart Base profile looks for any module named [name]_base in your site's mod
 This is a D8 fork from https://www.drupal.org/project/base with some additional features.
 
 
-## How to install
+# How to install
 
 Download the code from a version you like https://github.com/heshanlk/kickstart_base/releases, then place it inside your profiles folder in your Drupal 8 project.
+
+
+# Contribute
+Fork https://github.com/heshanlk/kickstart_base
